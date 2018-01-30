@@ -297,8 +297,8 @@ class NovaPoshtaApi2 {
 	 * @param string $track Track number
 	 * @return mixed
 	 */
-	function documentsTracking($track) {
-		return $this->request('InternetDocument', 'documentsTracking', array('Documents' => array('item' => $track)));
+	function documentsTracking($track, $phone = null) {
+		return $this->request('TrackingDocument', 'getStatusDocuments', array('Documents' => array('DocumentNumber' => $track, 'Phone' => $phone)));
 	}
 	
 	/**
